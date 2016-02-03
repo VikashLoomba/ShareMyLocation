@@ -44,30 +44,39 @@
                                 <rect key="frame" x="0.0" y="170" width="600" height="260"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj6-te-UAg">
-                                <rect key="frame" x="27" y="506" width="32" height="30"/>
+                                <rect key="frame" x="20" y="455" width="32" height="30"/>
                                 <state key="normal" title="SMS"/>
                                 <connections>
                                     <action selector="didPressSMSButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eh0-ch-WVr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kd3-Pv-Hwo">
+                                <rect key="frame" x="485" y="455" width="95" height="30"/>
+                                <state key="normal" title="Open in Maps"/>
+                                <connections>
+                                    <action selector="didPressOpenMaps:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ctK-Em-1tI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XoW-as-PY0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6s9-Te-VsU"/>
+                            <constraint firstItem="kd3-Pv-Hwo" firstAttribute="top" secondItem="XoW-as-PY0" secondAttribute="bottom" constant="25" id="87T-Fh-Jsy"/>
                             <constraint firstItem="Uwp-kr-UxL" firstAttribute="trailing" secondItem="9MY-Pl-4ej" secondAttribute="trailing" id="9Sv-04-fGj"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Oj6-te-UAg" secondAttribute="bottom" constant="64" id="C7O-3u-KJq"/>
+                            <constraint firstItem="kd3-Pv-Hwo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ocf-7w-cgy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XoW-as-PY0" secondAttribute="bottom" constant="170" id="Oof-ZF-bob"/>
                             <constraint firstItem="Uwp-kr-UxL" firstAttribute="top" secondItem="9MY-Pl-4ej" secondAttribute="bottom" constant="8" symbolic="YES" id="PB6-MJ-gWs"/>
                             <constraint firstItem="Afm-TB-0xs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="Sep-v2-ywc"/>
+                            <constraint firstItem="Oj6-te-UAg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TXQ-Cx-Ocv"/>
                             <constraint firstItem="XoW-as-PY0" firstAttribute="centerX" secondItem="9MY-Pl-4ej" secondAttribute="centerX" id="UbX-sh-Inu"/>
                             <constraint firstItem="Afm-TB-0xs" firstAttribute="centerX" secondItem="9MY-Pl-4ej" secondAttribute="centerX" id="cIn-c2-oaJ"/>
                             <constraint firstItem="Afm-TB-0xs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cTV-Nb-8QM"/>
                             <constraint firstItem="9MY-Pl-4ej" firstAttribute="top" secondItem="Afm-TB-0xs" secondAttribute="bottom" constant="8" symbolic="YES" id="cug-Ix-iOu"/>
                             <constraint firstItem="Uwp-kr-UxL" firstAttribute="leading" secondItem="9MY-Pl-4ej" secondAttribute="leading" id="eH5-9m-Gzg"/>
+                            <constraint firstItem="Oj6-te-UAg" firstAttribute="baseline" secondItem="kd3-Pv-Hwo" secondAttribute="baseline" id="ecy-nt-4h4"/>
                             <constraint firstItem="Uwp-kr-UxL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="114" id="feN-Ix-V1K"/>
                             <constraint firstItem="XoW-as-PY0" firstAttribute="top" secondItem="Uwp-kr-UxL" secondAttribute="bottom" constant="26" id="lG2-WU-7kz"/>
                             <constraint firstItem="XoW-as-PY0" firstAttribute="top" secondItem="9MY-Pl-4ej" secondAttribute="bottom" constant="64" id="wAb-5u-qaa"/>
-                            <constraint firstItem="Oj6-te-UAg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="zsj-pX-jvB"/>
                         </constraints>
                     </view>
                     <connections>

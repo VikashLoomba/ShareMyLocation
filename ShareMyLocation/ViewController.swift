@@ -12,13 +12,15 @@ import MapKit
 import Contacts
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    //Coordinates class variable
+    var coordinates : CLLocationCoordinate2D!
     //Apple Maps URL to send text
-    
+    let mapURL = "http://maps.apple.com/?";
     //Message Composer
     let messageComposer = MessageComposer();
     //location manager
     let locationManager : CLLocationManager = CLLocationManager();
-    //Label
+    //Labels
     @IBOutlet weak var locationLat: UILabel!
     @IBOutlet weak var locationLong: UILabel!
     //MapView
@@ -56,7 +58,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
         locationLat.text = "Latitude: \(coordinates.latitude)";
         locationLong.text = "Longitude: \(coordinates.longitude)";
+        
     }
+    //Did press open in maps
+    @IBAction func didPressOpenMaps(sender: UIButton) {
+        setMap();
+        let latitude: CLLocationDegrees = coordinates.latitude;
+        let longitude: CLLocationDegrees = coordinates.longitude;
+        let latDelta:CLLocationDegrees = 0.05
+        
+        let lonDelta:CLLocationDegrees = 0.05
+        
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        //Options for launching maps
+        var options = [
+            MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: region.center),
+            MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: region.span)
+        ];
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Your Location"
+        mapItem.openInMapsWithLaunchOptions(options)
+        
+    }
+    
     
     //Pressed the SMS button
     @IBAction func didPressSMSButton(sender: UIButton) {
@@ -91,7 +120,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
         
         let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-        
+        self.coordinates = coordinates;
         mapView.setRegion(region, animated: true)
     }
     
